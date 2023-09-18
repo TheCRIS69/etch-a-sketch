@@ -1,0 +1,41 @@
+:root {
+    --clr-main-light-gray: hsl(0, 0%, 45%);
+    --clr-main-dark-gray: hsl(0, 0%, 25%);
+
+    --clr-black: hsl(0, 0%, 0%);
+    --clr-white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(270deg, var(--clr-main-light-gray), var(--clr-main-dark-gray));
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 100vh;
+}
+
+.sketch-container {
+    background-color: var(--clr-white);
+    border: 5px solid var(--clr-black);
+    min-width: 450px;
+    min-height: 450px;
+}
+
+.title {
+    font-size: 3rem;
+}
+
