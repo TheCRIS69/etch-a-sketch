@@ -28,14 +28,20 @@ body {
     min-height: 100vh;
 }
 
-.sketch-container {
-    background-color: var(--clr-white);
-    border: 5px solid var(--clr-black);
-    min-width: 450px;
-    min-height: 450px;
-}
-
 .title {
     font-size: 3rem;
 }
 
+.sketch-container {
+    width: 500px;
+    height: 500px;
+    background-color: var(--clr-white);
+}
+
+.flex-group {
+    display: flex;
+}
+
+.flex-element:hover {
+    background-color: var(--clr-main-dark-gray);
+}
