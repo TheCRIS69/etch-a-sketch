@@ -1,7 +1,7 @@
 const container = document.querySelector('.sketch-container');
 
-
 function grid(dimension) {
+
     for (let i = 1; i <= dimension; i++) {
         const flexGroup = document.createElement('div');
         container.appendChild(flexGroup);
@@ -17,7 +17,45 @@ function grid(dimension) {
     }
 }
 
+grid(8);
 
-grid(16);
+const color = document.querySelector('#color-selection');
+
+let IsMouseDown = false;
+container.addEventListener('mousedown', () => {
+    isMouseDown = true;
+});
+
+document.addEventListener('mouseup', () => {
+    isMouseDown = false;
+});
+
+container.addEventListener('mousemove', drawColor);
+container.addEventListener('click', drawColorClick);
+
+function drawColor(e) {
+    if (isMouseDown && e.target.classList.contains('flex-element')) {
+        e.target.style.backgroundColor = color.value;
+    }
+}
+
+function drawColorClick(e) {
+    if (e.target.classList.contains('flex-element')) {
+        e.target.style.backgroundColor = color.value;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
