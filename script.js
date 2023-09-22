@@ -1,12 +1,20 @@
 const container = document.querySelector('.sketch-container');
+const color = document.querySelector('#color-selection');
+const slider = document.querySelector('#dimension-selection');
+const sliderValue = document.querySelector('#dimension');
+
+
+slider.addEventListener('input', () => {
+    let dimension = slider.value;
+    sliderValue.textContent = `${dimension}x${dimension}`;
+});
 
 function grid(dimension) {
-
     for (let i = 1; i <= dimension; i++) {
         const flexGroup = document.createElement('div');
         container.appendChild(flexGroup);
         flexGroup.classList.add('flex-group');
-
+        
         for (let j = 1; j <= dimension; j++) {
             const flexElement = document.createElement('div');
             flexGroup.appendChild(flexElement);
@@ -16,12 +24,9 @@ function grid(dimension) {
         }
     }
 }
+grid(slider.value);
 
-grid(8);
-
-const color = document.querySelector('#color-selection');
-
-let IsMouseDown = false;
+let isMouseDown = false;
 container.addEventListener('mousedown', () => {
     isMouseDown = true;
 });
@@ -44,18 +49,3 @@ function drawColorClick(e) {
         e.target.style.backgroundColor = color.value;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

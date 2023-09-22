@@ -25,12 +25,13 @@
                 <input type="color" id="color-selection">
             </div>
 
+            <button class="button" id="draw-color">DRAW</button>
             <button class="button" id="ereaser">EREASER</button>
-            <button class="button">CLEAR</button>
+            <button class="button" id="clear-grid">CLEAR</button>
 
             <div class="options">
-                <input type="range" id="dimension-selection"> 
-                <label for="dimension-selection">?</label>
+                <input type="range" id="dimension-selection" min="1" steps="1" max="64" value="16">
+                <label for="dimension-selection"><span id="dimension">16x16</span></label>
             </div>
         </div>
 
