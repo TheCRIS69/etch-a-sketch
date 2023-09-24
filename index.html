@@ -14,26 +14,28 @@
 <body>
 <main>
     <div class="wrapper">
-        <div class="flex-column">
+        <div class="column-wrapper">
             <h1 class="title">Etch-a-Sketch</h1>
             <div class="sketch-container"></div>
         </div>
 
-        <div class="flex-column">
+        <div class="column-wrapper">
             <div class="options">
                 <label for="color-selection">COLOR: </label>
                 <input type="color" id="color-selection">
             </div>
 
-                <button class="button" id="ereaser">EREASER</button>
-                <button class="button" id="clear-grid">CLEAR</button>
+                <div class="column-wrapper" id="draw-mode">
+                    <button class="button" id="draw">DRAW</button>
+                    <button class="button" id="erase">ERASER</button>
+                </div>
+                <button class="button" id="clear">CLEAR</button>
 
             <div class="options">
                 <input type="range" id="dimension-selection" min="1" steps="1" max="64" value="16">
                 <label for="dimension-selection"><span id="dimension">16x16</span></label>
             </div>
         </div>
-
     </div>
         
 </main>

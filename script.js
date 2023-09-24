@@ -34,6 +34,14 @@ function resetGridElements() {
     }
 }
 
+const clearBtn = document.querySelector('#clear');
+clearBtn.addEventListener('click', resetGridElements);
+
+
+const color = document.querySelector('#color-selection');
+container.addEventListener('mousemove', drawColor);
+container.addEventListener('click', drawColorClick);
+
 let isMouseDown = false;
 container.addEventListener('mousedown', () => {
     isMouseDown = true;
@@ -42,24 +50,33 @@ document.addEventListener('mouseup', () => {
     isMouseDown = false;
 });
 
-const color = document.querySelector('#color-selection');
-container.addEventListener('mousemove', drawColor);
-container.addEventListener('click', drawColorClick);
-
 function drawColor(e) {
     if (isMouseDown && e.target.classList.contains('flex-element')) {
         e.target.style.backgroundColor = color.value;
     }
 }
-
 function drawColorClick(e) {
     if (e.target.classList.contains('flex-element')) {
         e.target.style.backgroundColor = color.value;
     }
 }
 
-const clearBtn = document.querySelector('#clear-grid');
-clearBtn.addEventListener('click', resetGridElements);
+const drawMode = document.querySelector('#draw-mode');
+drawMode.addEventListener('click', toggleDrawMode);
 
+let previousColor = '';
+
+function toggleDrawMode(e) {
+    if (e.target.tagName === 'BUTTON') {
+
+        if (e.target.id === 'erase') {
+            previousColor = color.value;
+            color.value = '#FFFFFF';
+        }
+        else if (e.target.id === 'draw') {
+            color.value = previousColor;
+        }
+    }
+}
 
 

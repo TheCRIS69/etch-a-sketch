@@ -40,18 +40,17 @@ body {
     font-family: var(--ff-main);
 }
 
-.flex-column {
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 4rem;
+}
+.column-wrapper {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-}
-
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    gap: 4rem;
 }
 
 .title {
@@ -61,8 +60,8 @@ body {
 }
 
 .sketch-container {
-    width: 500px;
-    height: 500px;
+    max-width: 500px;
+    max-height: 500px;
     background-color: var(--clr-white);
 }
 .flex-group {
@@ -75,6 +74,7 @@ body {
 .options {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: .5rem;
     flex-direction: column;
 }
